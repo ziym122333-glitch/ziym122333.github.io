@@ -2,104 +2,109 @@
 <html>
 
 <head>
+
 <meta charset="UTF-8">
-<title>ZIYM Fitness | Creatine Supplements</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZIYM Fitness Supplements</title>
 
 <style>
 
 body{
 margin:0;
 font-family:Arial;
-background:#f4f4f4;
+background:#f5f6f7;
 }
 
-/* 顶部导航 */
+/* NAV */
 
-header{
+nav{
 background:#111;
-color:white;
-padding:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+padding:18px;
+text-align:center;
 }
 
 nav a{
 color:white;
-margin:0 15px;
+margin:20px;
 text-decoration:none;
+font-size:18px;
+}
+
+/* HERO */
+
+.hero{
+height:420px;
+background:url("https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:42px;
 font-weight:bold;
 }
 
-/* 封面 */
+/* SECTION */
 
-.hero{
-background:url("https://images.unsplash.com/photo-1583454110551-21f2fa2afe61");
-background-size:cover;
-background-position:center;
-height:420px;
+.section{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+}
+
+/* WHY US */
+
+.features{
 display:flex;
-align-items:center;
-justify-content:center;
-color:white;
+gap:40px;
 text-align:center;
 }
 
-.hero h1{
-font-size:48px;
-background:rgba(0,0,0,0.5);
-padding:20px;
+.feature{
+flex:1;
 }
 
-/* 内容 */
+/* PRODUCT GRID */
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:40px;
-background:white;
-}
-
-.product{
-display:flex;
+.products{
+display:grid;
+grid-template-columns:repeat(3,1fr);
 gap:30px;
-margin-bottom:60px;
-align-items:center;
 }
 
-.product img{
-width:360px;
+.card{
+background:white;
+padding:20px;
 border-radius:10px;
 }
 
-/* 视频 */
-
-.video{
-text-align:center;
-margin-top:40px;
+.card img{
+width:100%;
 }
 
-/* 页脚 */
+/* CTA */
+
+.cta{
+background:#0a7f5a;
+color:white;
+text-align:center;
+padding:60px;
+font-size:28px;
+}
+
+/* FOOTER */
 
 footer{
 background:#111;
 color:white;
 padding:40px;
-margin-top:40px;
-}
-
-.footer-grid{
-display:flex;
-justify-content:space-between;
-max-width:1000px;
-margin:auto;
+text-align:center;
 }
 
 footer a{
-color:white;
+color:#00ffaa;
+margin:10px;
 text-decoration:none;
-display:block;
-margin-top:10px;
 }
 
 </style>
@@ -108,129 +113,107 @@ margin-top:10px;
 
 <body>
 
-<header>
-
-<h2>ZIYM Fitness</h2>
-
 <nav>
 
 <a href="index.html">Home</a>
-<a href="creatine.html">Creatine</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
+<a href="#">Products</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
 
 </nav>
 
-</header>
-
 <div class="hero">
 
-<h1>Premium Creatine Supplements Guide</h1>
+Build Strength With Creatine
 
 </div>
 
-<div class="container">
+<div class="section">
 
-<h2>Best Creatine Supplements</h2>
+<h2 align="center">Why Choose Our Supplements</h2>
 
+<div class="features">
 
-<div class="product">
+<div class="feature">
 
-<img src="https://images.unsplash.com/photo-1622484212850-eb596d769edc">
+<h3>Premium Quality</h3>
 
-<div>
+<p>Manufactured under strict quality control standards.</p>
+
+</div>
+
+<div class="feature">
+
+<h3>Trusted Formula</h3>
+
+<p>Scientifically backed ingredients for real performance.</p>
+
+</div>
+
+<div class="feature">
+
+<h3>Global Shipping</h3>
+
+<p>Serving customers worldwide with fast delivery.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2 align="center">Popular Products</h2>
+
+<div class="products">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e">
 
 <h3>Creatine Monohydrate</h3>
 
-<p>
-
-Creatine Monohydrate is the most researched and widely used form of creatine in sports nutrition.
-It helps increase muscle strength, improve power output, and support muscle growth.
-Many athletes and bodybuilders use creatine monohydrate to enhance performance during high-intensity training.
-
-</p>
-
 </div>
 
-</div>
+<div class="card">
 
-
-<div class="product">
-
-<img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04">
-
-<div>
+<img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba">
 
 <h3>Creatine HCL</h3>
 
-<p>
+</div>
 
-Creatine HCL is a newer form of creatine designed to improve solubility and digestion.
-Some athletes prefer it because it may reduce bloating compared with traditional creatine powders.
-It is often used as an alternative to standard creatine monohydrate.
+<div class="card">
 
-</p>
+<img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74">
+
+<h3>Pre Workout Formula</h3>
 
 </div>
 
 </div>
 
-
-<div class="video">
-
-<h2>How Creatine Improves Performance</h2>
-
-<iframe width="700" height="400"
-src="https://www.youtube.com/embed/U9ENCvFf9yQ"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
 </div>
 
-</div>
+<div class="cta">
 
+Get A Quote Within 24 Hours
+
+</div>
 
 <footer>
 
-<div class="footer-grid">
+<p>Contact: ziymfitness@email.com</p>
 
-<div>
+<a href="#">WhatsApp</a>
+<a href="#">Instagram</a>
+<a href="#">YouTube</a>
 
-<h3>Company</h3>
-
-<a href="about.html">About Us</a>
-<a href="#">Our Mission</a>
-<a href="contact.html">Contact</a>
-
-</div>
-
-<div>
-
-<h3>Support</h3>
-
-<a href="privacy.html">Privacy Policy</a>
-<a href="terms.html">Terms of Service</a>
-<a href="faq.html">FAQ</a>
-
-</div>
-
-<div>
-
-<h3>Contact</h3>
-
-<p>Email: contact@ziymfitness.com</p>
-<p>Location: Tokyo, Japan</p>
-
-</div>
-
-</div>
+<p>© 2026 ZIYM Fitness</p>
 
 </footer>
 
 </body>
 
-</html>
-
-</body>
 </html>
