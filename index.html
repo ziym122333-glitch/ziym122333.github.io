@@ -3,201 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZIYM FITNESS | Premium Supplement Source Factory</title>
+    <title>ZIYM FITNESS | Global Industrial Supplement Source</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --accent: #ccff00; --dark: #0a0a0a; --gray: #1a1a1a; --white: #ffffff; --green-brand: #006837; }
-        body { margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #fff; color: #333; line-height: 1.6; }
-        
-        /* 顶部联系栏 - 仿 CFKS 灰色条 */
-        .top-bar { background: #666; color: white; padding: 10px 5%; font-size: 14px; text-align: center; font-weight: bold; }
+        /* 【全站资源链接仓】在这里修改一次，全站生效，HTML里见不到长网址 */
+        :root {
+            --primary: #ccff00; 
+            --bg-deep: #000000;
+            --bg-card: #0e0e0e;
+            --border-color: #222222;
+            
+            /* 图片变量 */
+            --url-creatine: url('https://images.unsplash.com/photo-1593095191850-2a7333583a4e?auto=format&fit=crop&q=80');
+            --url-protein: url('https://images.unsplash.com/photo-1579722820308-d74e5719d0a8?auto=format&fit=crop&q=80');
+            --url-glutamine: url('https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&q=80');
+            --url-gmp: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/GMP_logo.svg/2560px-GMP_logo.svg.png');
+            --url-sgs: url('https://www.sgs.com/-/media/sgssite/images/logos/sgs-logo-social.png');
+            --url-iso: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/ISO_7010_Safe_Condition_Sign_-_Safety_Way.svg/1200px-ISO_7010_Safe_Condition_Sign_-_Safety_Way.svg.png');
+        }
+
+        /* 基础样式复刻 */
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Inter', 'Segoe UI', Arial, sans-serif; background: var(--bg-deep); color: #fff; line-height: 1.6; }
+        .container { width: 90%; max-width: 1400px; margin: 0 auto; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* 1. 顶部公告条 (对齐截图1) */
+        .top-bar { background: #111; color: var(--primary); padding: 12px 0; border-bottom: 1px solid var(--border-color); font-size: 13px; font-weight: bold; }
         .top-bar i { margin-right: 8px; }
 
-        /* 导航栏 */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 24px; font-weight: 900; color: var(--green-brand); text-transform: uppercase; }
-        .nav-links a { color: #333; text-decoration: none; margin-left: 20px; font-size: 14px; font-weight: bold; text-transform: uppercase; }
+        /* 2. 导航栏 (黑金升级版) */
+        nav { background: rgba(0,0,0,0.9); padding: 25px 0; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 32px; font-weight: 900; color: var(--primary); letter-spacing: -1.5px; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a:hover { color: var(--primary); }
+        .header-action { background: var(--primary); color: #000; padding: 12px 25px; border-radius: 2px; font-weight: 900; }
 
-        /* 搜索区域 - 核心模块 */
-        .search-section { padding: 40px 5%; text-align: center; background: #f9f9f9; }
-        .search-container { max-width: 600px; margin: 20px auto; position: relative; }
-        .search-container input { width: 100%; padding: 15px 45px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; }
-        .search-container i { position: absolute; left: 15px; top: 18px; color: #999; }
+        /* 3. 巨幕搜索区 (对齐截图1) */
+        .hero-search { padding: 100px 0; background: radial-gradient(circle, #111 0%, #000 100%); text-align: center; border-bottom: 1px solid var(--border-color); }
+        .search-container { max-width: 700px; margin: 40px auto; position: relative; }
+        .search-container input { width: 100%; padding: 22px 65px; background: #111; border: 1px solid var(--border-color); border-radius: 5px; color: #fff; font-size: 18px; }
+        .search-container i { position: absolute; left: 25px; top: 25px; font-size: 22px; color: var(--primary); }
+        .search-container button { position: absolute; right: 10px; top: 10px; background: var(--primary); border: none; padding: 12px 20px; font-weight: bold; cursor: pointer; }
 
-        /* 三点优势介绍 */
-        .features-intro { padding: 40px 5%; display: grid; grid-template-cols: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
-        .features-intro i { font-size: 50px; color: var(--green-brand); margin-bottom: 15px; }
-        .features-intro h3 { font-size: 20px; margin-bottom: 10px; }
+        /* 4. 核心优势模块 */
+        .features-grid { padding: 100px 0; display: grid; grid-template-cols: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
+        .feat-card { text-align: center; padding: 40px; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); }
+        .feat-card i { font-size: 50px; color: var(--primary); margin-bottom: 25px; }
+        .feat-card h3 { font-size: 22px; margin-bottom: 15px; text-transform: uppercase; }
 
-        /* 产品大类标题 */
-        .category-header { background: var(--green-brand); color: white; padding: 40px 5%; text-align: center; text-transform: uppercase; }
+        /* 5. 分类大标题 (对齐截图2) */
+        .section-tag { background: #111; padding: 60px 0; text-align: center; border-top: 1px solid #222; }
+        .section-tag h2 { font-size: 48px; font-weight: 900; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .section-tag span { color: var(--primary); }
 
-        /* 产品展示网格 */
-        .product-grid { padding: 50px 5%; display: grid; grid-template-cols: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .product-card { border: 1px solid #eee; padding: 20px; text-align: center; transition: 0.3s; }
-        .product-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .product-card img { width: 100%; height: 280px; object-fit: contain; margin-bottom: 15px; }
+        /* 6. 产品大网格 (对齐截图2/3) */
+        .product-section { padding: 80px 0; display: grid; grid-template-cols: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
+        .p-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 40px; position: relative; }
+        .p-card:hover { border-color: var(--primary); }
+        .p-thumb { height: 350px; background-size: contain; background-repeat: no-repeat; background-position: center; margin-bottom: 30px; }
+        .img-1 { background-image: var(--url-creatine); }
+        .img-2 { background-image: var(--url-protein); }
         
-        /* 规格参数表 - 仿 CFKS 细节 */
-        .spec-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 13px; text-align: left; }
-        .spec-table td { padding: 8px; border-bottom: 1px solid #f0f0f0; color: #666; }
-        .spec-table td:last-child { font-weight: bold; color: #333; text-align: right; }
+        .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        .spec-table td { padding: 15px 0; border-bottom: 1px solid #222; font-size: 15px; }
+        .spec-table td:last-child { text-align: right; color: var(--primary); font-weight: bold; }
+        
+        .p-btns { display: grid; grid-template-cols: 1fr 1fr; gap: 15px; }
+        .btn { padding: 15px; text-align: center; font-weight: bold; cursor: pointer; border-radius: 2px; }
+        .btn-primary { background: var(--primary); color: #000; border: none; }
+        .btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
 
-        /* 绿色询盘按钮 */
-        .btn-quote { background: var(--green-brand); color: white; border: none; padding: 12px 25px; cursor: pointer; font-weight: bold; width: 100%; text-transform: uppercase; }
+        /* 7. 专业服务流程 (对齐截图2) */
+        .process-section { background: #080808; padding: 100px 0; text-align: center; }
+        .process-steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; margin-top: 50px; }
+        .step { width: 160px; }
+        .step-num { width: 60px; height: 60px; background: var(--primary); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: 900; }
 
-        /* OEM 流程步骤 */
-        .oem-process { padding: 60px 5%; background: #f4f4f4; text-align: center; }
-        .steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
-        .step-item { width: 150px; }
-        .step-circle { width: 60px; height: 60px; background: var(--green-brand); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 20px; font-weight: bold; }
+        /* 8. 证书墙 (对齐截图3) */
+        .cert-wrap { padding: 60px 0; background: #000; display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; opacity: 0.6; filter: grayscale(1) invert(1); }
+        .cert-img { width: 120px; height: 70px; background-size: contain; background-repeat: no-repeat; background-position: center; }
+        .c1 { background-image: var(--url-gmp); }
+        .c2 { background-image: var(--url-sgs); }
+        .c3 { background-image: var(--url-iso); }
 
-        /* 证书展示区 */
-        .certs-bar { padding: 40px 5%; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: 0.6; filter: grayscale(1); }
-        .certs-bar img { height: 50px; }
+        /* 9. 全尺寸深度页脚 (对齐截图3) */
+        footer { background: #050505; padding: 100px 0 50px; border-top: 1px solid var(--border-color); }
+        .f-grid { display: grid; grid-template-cols: repeat(auto-fit, minmax(250px, 1fr)); gap: 80px; }
+        .f-col h4 { color: var(--primary); border-bottom: 1px solid #222; padding-bottom: 20px; margin-bottom: 30px; font-size: 20px; text-transform: uppercase; }
+        .f-col ul { list-style: none; padding: 0; }
+        .f-col li { margin-bottom: 18px; color: #777; font-size: 15px; cursor: pointer; }
+        .f-col li:hover { color: var(--primary); }
+        
+        .f-form input, .f-form textarea { width: 100%; padding: 18px; background: #111; border: 1px solid #222; color: #fff; margin-bottom: 20px; }
+        .f-form button { background: var(--primary); color: #000; border: none; padding: 20px; font-weight: 900; width: 100%; cursor: pointer; }
 
-        /* 底部深绿色导航与联系区 */
-        footer { background: var(--green-brand); color: white; padding: 60px 5% 20px; }
-        .footer-grid { display: grid; grid-template-cols: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-        .footer-col h4 { border-bottom: 2px solid rgba(255,255,255,0.2); padding-bottom: 10px; margin-bottom: 20px; }
-        .footer-col ul { list-style: none; padding: 0; }
-        .footer-col li { margin-bottom: 10px; font-size: 14px; opacity: 0.9; }
-        .footer-col a { color: white; text-decoration: none; }
-
-        /* 底部输入框 */
-        .footer-form input, .footer-form textarea { width: 100%; padding: 12px; margin-bottom: 10px; border: none; border-radius: 2px; }
-        .footer-form button { background: #333; color: white; border: none; padding: 12px 30px; cursor: pointer; width: 100%; font-weight: bold; }
-
-        /* 移动端浮动按钮 */
-        .floating-wa { position: fixed; bottom: 25px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1001; }
+        /* 悬浮 WhatsApp 联动 */
+        .wa-float { position: fixed; bottom: 40px; right: 40px; background: #25d366; width: 75px; height: 75px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; color: white; box-shadow: 0 20px 40px rgba(0,0,0,0.5); z-index: 9999; }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        <i class="fas fa-phone"></i> Call: +86 191 3390 9725 | Email: ziym122333@gmail.com
+        <div class="container">
+            <i class="fas fa-bullhorn"></i> NEW RELEASE: 2026 Batch Pharmaceutical Grade Whey Protein Isolate Available Now!
+        </div>
     </div>
 
     <nav>
-        <div class="logo">ZIYM FITNESS</div>
-        <div class="nav-links">
-            <a href=" ">Home</a >
-            <a href="#products">Products</a >
-            <a href="#about">About</a >
-            <a href="#contact">Contact</a >
+        <div class="container nav-flex">
+            <div class="logo">ZIYM FITNESS</div>
+            <div class="nav-links">
+                <a href=" ">HOME</a >
+                <a href="#products">PRODUCTS</a >
+                <a href="#services">OEM SERVICES</a >
+                <a href="#contact">CONTACT</a >
+            </div>
+            <a href="#contact" class="header-action">INQUIRY NOW</a >
         </div>
     </nav>
 
-    <section class="search-section">
-        <h2 style="font-size: 32px; margin-bottom: 10px;">Search Fitness Inventory</h2>
-        <div class="search-container">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search by supplement name or formula...">
+    <section class="hero-search">
+        <div class="container">
+            <h1 style="font-size: 55px; font-weight: 900; margin-bottom: 10px;">GLOBAL SOURCE FACTORY</h1>
+            <p style="color: #666; font-size: 20px;">Search over 500+ types of industrial grade supplement materials</p >
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search by name, purity or application...">
+                <button onclick="alert('Searching...')">SEARCH</button>
+            </div>
         </div>
     </section>
 
-    <section class="features-intro">
-        <div class="feature-card-item">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Premium Quality</h3>
-            <p>99.9% purity lab-tested formulas for maximum performance.</p >
-        </div>
-        <div class="feature-card-item">
-            <i class="fas fa-industry"></i>
-            <h3>Source Factory</h3>
-            <p>Direct supply with competitive wholesale pricing since 2016.</p >
-        </div>
-        <div class="feature-card-item">
-            <i class="fas fa-flask"></i>
-            <h3>Custom Formula</h3>
-            <p>Professional OEM/ODM services for your own supplement brand.</p >
-        </div>
+    <section class="container features-grid">
+        <div class="feat-card"><i class="fas fa-shield-virus"></i><h3>Pharma Purity</h3><p>Every batch exceeds 99.9% purity standards with full COA documentation.</p ></div>
+        <div class="feat-card"><i class="fas fa-microscope"></i><h3>Lab Certified</h3><p>Triple-testing protocol by independent third-party laboratories (SGS/Intertek).</p ></div>
+        <div class="feat-card"><i class="fas fa-shipping-fast"></i><h3>Global Export</h3><p>Secure door-to-door logistics to over 120 countries with customs clearance.</p ></div>
     </section>
 
-    <section class="category-header" id="products">
-        <h2>Product Categories</h2>
-        <p>Explore our high-performance supplement range</p >
-    </section>
+    <div class="section-tag" id="products">
+        <h2>BULK <span>INVENTORY</span></h2>
+        <p style="color: #444; margin-top: 10px;">Premium Industrial Grade Raw Materials</p >
+    </div>
 
-    <section class="product-grid">
-        <div class="product-card">
-            < img src="https://images.unsplash.com/photo-1593095191850-2a7333583a4e?auto=format&fit=crop&q=80" alt="Creatine">
+    <section class="container product-section">
+        <div class="p-card">
+            <div class="p-thumb img-1"></div>
             <h3>Pure Creatine Monohydrate</h3>
             <table class="spec-table">
-                <tr><td>Purity</td><td>≥ 99.9%</td></tr>
-                <tr><td>Mesh Size</td><td>200 Mesh</td></tr>
-                <tr><td>Grade</td><td>USP / Food Grade</td></tr>
-                <li>MOQ: <span>100KG</span></li>
+                <tr><td>Assay (HPLC)</td><td>≥ 99.9%</td></tr>
+                <tr><td>Mesh Size</td><td>200 Mesh / Fine Powder</td></tr>
+                <tr><td>Standard</td><td>USP43 / Food Grade</td></tr>
+                <tr><td>Application</td><td>Performance / Power</td></tr>
             </table>
-            <button class="btn-quote" onclick="location.href='#contact'">Request A Quote</button>
+            <div class="p-btns">
+                <a href="#contact" class="btn btn-primary">GET QUOTE</a >
+                <a href="https://wa.me/8618830975917" class="btn btn-outline">WHATSAPP</a >
+            </div>
         </div>
-
-        <div class="product-card">
-            < img src="https://images.unsplash.com/photo-1579722820308-d74e5719d0a8?auto=format&fit=crop&q=80" alt="Protein">
-            <h3>Isolated Whey Protein</h3>
+        <div class="p-card">
+            <div class="p-thumb img-2"></div>
+            <h3>Whey Protein Isolate</h3>
             <table class="spec-table">
-                <tr><td>Protein Content</td><td>90% - 95%</td></tr>
-                <tr><td>Flavor</td><td>Customizable</td></tr>
-                <tr><td>Solubility</td><td>Instantized</td></tr>
-                <li>MOQ: <span>500 Units</span></li>
+                <tr><td>Protein (Dry)</td><td>92.5% Min</td></tr>
+                <tr><td>Fat / Carb</td><td>< 1% Zero Sugar</td></tr>
+                <tr><td>BCAA Content</td><td>High / Bioavailable</td></tr>
+                <tr><td>Moisture</td><td>≤ 5% Max</td></tr>
             </table>
-            <button class="btn-quote" onclick="location.href='#contact'">Request A Quote</button>
+            <div class="p-btns">
+                <a href="#contact" class="btn btn-primary">GET QUOTE</a >
+                <a href="https://wa.me/8618830975917" class="btn btn-outline">WHATSAPP</a >
+            </div>
         </div>
     </section>
 
-    <section class="oem-process">
-        <h2>OEM / Private Label Process</h2>
-        <div class="steps">
-            <div class="step-item"><div class="step-circle">1</div><p>Inquiry</p ></div>
-            <div class="step-item"><div class="step-circle">2</div><p>Sampling</p ></div>
-            <div class="step-item"><div class="step-circle">3</div><p>Design</p ></div>
-            <div class="step-item"><div class="step-circle">4</div><p>Production</p ></div>
-            <div class="step-item"><div class="step-circle">5</div><p>Shipping</p ></div>
+    <section class="process-section" id="services">
+        <div class="container">
+            <h2 style="font-size: 40px; margin-bottom: 20px;">OEM / PRIVATE LABEL PROCESS</h2>
+            <div class="process-steps">
+                <div class="step"><div class="step-num">01</div><p>Formula Design</p ></div>
+                <div class="step"><div class="step-num">02</div><p>Sample Testing</p ></div>
+                <div class="step"><div class="step-num">03</div><p>Packaging Design</p ></div>
+                <div class="step"><div class="step-num">04</div><p>Mass Production</p ></div>
+                <div class="step"><div class="step-num">05</div><p>Final Quality Check</p ></div>
+                <div class="step"><div class="step-num">06</div><p>Global Delivery</p ></div>
+            </div>
         </div>
     </section>
 
-    <div class="certs-bar">
-        < img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/GMP_logo.svg/2560px-GMP_logo.svg.png" alt="GMP">
-        < img src="https://www.sgs.com/-/media/sgssite/images/logos/sgs-logo-social.png" alt="SGS">
-        < img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/ISO_7010_Safe_Condition_Sign_-_Safety_Way.svg/1200px-ISO_7010_Safe_Condition_Sign_-_Safety_Way.svg.png" alt="ISO">
+    <div class="cert-wrap">
+        <div class="cert-img c1"></div>
+        <div class="cert-img c2"></div>
+        <div class="cert-img c3"></div>
     </div>
 
     <footer id="contact">
-        <div class="footer-grid">
-            <div class="footer-col">
+        <div class="container f-grid">
+            <div class="f-col">
                 <h4>NAVIGATION</h4>
                 <ul>
-                    <li><a href="#">Home</a ></li>
-                    <li><a href="#">About Us</a ></li>
-                    <li><a href="#">Product Range</a ></li>
-                    <li><a href="#">Factory Tour</a ></li>
+                    <li onclick="location.href='#'">Home Page</li>
+                    <li onclick="location.href='#products'">Bulk Inventory</li>
+                    <li onclick="location.href='#services'">Custom Solutions</li>
+                    <li>Quality Control Lab</li>
+                    <li>About ZIYM Fitness</li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>CONTACT US</h4>
+            <div class="f-col">
+                <h4>DIRECT CONTACT</h4>
                 <ul>
-                    <li>Email: ziym122333@gmail.com</li>
-                    <li>Mobile: +86 191 3390 9725</li>
-                    <li>WhatsApp: +86 191 3390 9725</li>
-                    <li>Address: Hebei Fitness Industrial Park, China</li>
+                    <li><i class="fas fa-envelope"></i> ziymfitness@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> +86 188 3097 5917</li>
+                    <li><i class="fab fa-whatsapp"></i> +86 188 3097 5917</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Hebei Industrial Zone, CN</li>
                 </ul>
             </div>
-            <div class="footer-col footer-form">
-                <h4>QUICK INQUIRY</h4>
-                <form action="mailto:ziym122333@gmail.com" method="post" enctype="text/plain">
-                    <input type="text" placeholder="Name/Phone/Email/Message *" required>
-                    <button type="submit">SEND</button>
+            <div class="f-col f-form">
+                <h4>FAST QUOTE</h4>
+                <form action="mailto:ziymfitness@gmail.com" method="post" enctype="text/plain">
+                    <input type="text" placeholder="Full Name / Email *" required>
+                    <textarea rows="4" placeholder="Your Inquiry Details (Product, Quantity...)"></textarea>
+                    <button type="submit">SEND MESSAGE</button>
                 </form>
             </div>
         </div>
-        <div style="text-align:center; margin-top:50px; font-size:12px; opacity:0.7; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px;">
-            © ZIYM FITNESS MANUFACTURING CO., LTD. ALL RIGHTS RESERVED.
-        </div>
+        <p style="text-align:center; margin-top:80px; font-size:12px; color: #333;">© 2026 ZIYM FITNESS MANUFACTURING GROUP. ALL RIGHTS RESERVED.</p >
     </footer>
 
-    <a href="https://wa.me/8619133909725" class="floating-wa">
-        <i class="fab fa-whatsapp"></i>
-    </a >
+    <a href="https://wa.me/8618830975917" class="wa-float"><i class="fab fa-whatsapp"></i></a >
 
 </body>
 </html>
