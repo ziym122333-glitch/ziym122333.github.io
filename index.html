@@ -1,219 +1,188 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zh-CN">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFKS Style - Sealing Excellence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #006837; /* CFKS 标志性的深绿色 */
+            --dark-gray: #333;
+            --light-bg: #f4f7f6;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: var(--light-bg);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
 
-<title>ZIYM Fitness Supplements</title>
+        /* 1. 顶部红色/灰色联系栏 */
+        .top-bar {
+            background: #666;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .top-bar i { margin-right: 8px; }
 
-<style>
+        /* 2. 导航栏 */
+        header {
+            background: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { font-size: 24px; font-weight: 900; color: var(--primary-green); }
 
-body{
-margin:0;
-font-family:Arial;
-background:#f5f6f7;
-}
+        /* 3. 搜索区域 (参考截图中的 Search Sealing Inventory) */
+        .search-box {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        .search-box h2 { margin-bottom: 20px; font-size: 1.5rem; }
+        .search-container {
+            max-width: 500px;
+            margin: auto;
+            position: relative;
+        }
+        .search-container input {
+            width: 100%;
+            padding: 12px 40px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .search-container i {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            color: #999;
+        }
 
-/* NAV */
+        /* 4. 产品主容器 */
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+        }
 
-nav{
-background:#111;
-padding:18px;
-text-align:center;
-}
+        .product-header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            .product-header { flex-direction: row; }
+        }
 
-nav a{
-color:white;
-margin:20px;
-text-decoration:none;
-font-size:18px;
-}
+        .product-image { flex: 1; }
+        .product-image img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
 
-/* HERO */
+        .product-info { flex: 1; }
 
-.hero{
-height:420px;
-background:url("https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b") center/cover;
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
-font-size:42px;
-font-weight:bold;
-}
+        /* 5. 按钮样式升级 */
+        .btn-quote {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .btn-quote:hover { background: #004d29; }
 
-/* SECTION */
-
-.section{
-max-width:1100px;
-margin:auto;
-padding:60px 20px;
-}
-
-/* WHY US */
-
-.features{
-display:flex;
-gap:40px;
-text-align:center;
-}
-
-.feature{
-flex:1;
-}
-
-/* PRODUCT GRID */
-
-.products{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-}
-
-.card img{
-width:100%;
-}
-
-/* CTA */
-
-.cta{
-background:#0a7f5a;
-color:white;
-text-align:center;
-padding:60px;
-font-size:28px;
-}
-
-/* FOOTER */
-
-footer{
-background:#111;
-color:white;
-padding:40px;
-text-align:center;
-}
-
-footer a{
-color:#00ffaa;
-margin:10px;
-text-decoration:none;
-}
-
-</style>
-
+        /* 6. 优势展示区 (图标) */
+        .features {
+            display: grid;
+            grid-template-cols: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        .feature-card i {
+            font-size: 40px;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
-
 <body>
 
-<nav>
+    <div class="top-bar">
+        <i class="fas fa-phone"></i> Call (86) 188-3097-5917
+    </div>
 
-<a href="index.html">Home</a>
-<a href="products.html">Products</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+    <header>
+        <div class="logo">CFKS <span style="font-weight:300; font-size:14px;">SINCE 1993</span></div>
+        <i class="fas fa-bars" style="font-size: 24px;"></i>
+    </header>
 
-</nav>
+    <section class="search-box">
+        <h2>Search Sealing Inventory</h2>
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search by size or model...">
+        </div>
+    </section>
 
-<div class="hero">
+    <div class="container">
+        <div class="product-header">
+            <div class="product-image">
+                < img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" alt="TC Oil Seal">
+            </div>
+            
+            <div class="product-info">
+                <h1 style="margin-top:0; color: var(--primary-green);">TC Skeleton Oil Seal</h1>
+                <p><strong>Category:</strong> Rotary Shaft Seal</p >
+                <p><strong>Material:</strong> NBR / FKM / Silicone</p >
+                <p style="color: #666;">TC oil seals are high-performance components designed for demanding industrial environments, providing tight sealing and long-lasting durability.</p >
+                <button class="btn-quote">Request A Quote</button>
+            </div>
+        </div>
 
-Build Strength With Creatine
+        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eee;">
 
-</div>
-
-<div class="section">
-
-<h2 align="center">Why Choose Our Supplements</h2>
-
-<div class="features">
-
-<div class="feature">
-
-<h3>Premium Quality</h3>
-
-<p>Manufactured under strict quality control standards.</p>
-
-</div>
-
-<div class="feature">
-
-<h3>Trusted Formula</h3>
-
-<p>Scientifically backed ingredients for real performance.</p>
-
-</div>
-
-<div class="feature">
-
-<h3>Global Shipping</h3>
-
-<p>Serving customers worldwide with fast delivery.</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2 align="center">Popular Products</h2>
-
-<div class="products">
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e">
-
-<h3>Creatine Monohydrate</h3>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba">
-
-<h3>Creatine HCL</h3>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74">
-
-<h3>Pre Workout Formula</h3>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="cta">
-
-Get A Quote Within 24 Hours
-
-</div>
-
-<footer>
-
-<p>Contact: ziymfitness@email.com</p>
-
-<a href="#">WhatsApp</a>
-<a href="#">Instagram</a>
-<a href="#">YouTube</a>
-
-<p>© 2026 ZIYM Fitness</p>
-
-</footer>
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-microchip"></i>
+                <h3>German Quality</h3>
+                <p>Precision and reliability in every seal.</p >
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-industry"></i>
+                <h3>Premium Performance</h3>
+                <p>Designed for demanding environments.</p >
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-award"></i>
+                <h3>Trusted Brand</h3>
+                <p>Global export experience since 1993.</p >
+            </div>
+        </div>
+    </div>
 
 </body>
-
 </html>
